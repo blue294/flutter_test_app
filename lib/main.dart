@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/main_page.dart';
+import 'pages/plan_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget
     (
       title: 'Dashboard',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MainPage(),
+      home: PlanPage(),
     );
   }
 }

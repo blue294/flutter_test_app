@@ -3,6 +3,8 @@ import 'package:flutter_sparkline/flutter_sparkline.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'shop_items_page.dart';
+import 'package:flutter_test_app/classes/plan_meals.dart';
+import 'package:flutter_test_app/utils/ColorExt.dart';
 
 class PlanPage extends StatefulWidget
 {
@@ -23,7 +25,8 @@ class _PlanPageState extends State<PlanPage>
   String actualDropdown = chartDropdownItems[0];
   int actualChart = 0;
 
-  final List<Plan>
+  final List<PlanMeals> plans = [];
+  final PlanMeals currentlyPan = null;
 
   @override
   Widget build(BuildContext context)
@@ -59,7 +62,11 @@ class _PlanPageState extends State<PlanPage>
           mainAxisSpacing: 12.0,
           padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
           children: <Widget>[
-            _buildTile(
+            Container
+            (
+              child: Text('Your plan', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 17)),
+            ),
+            _buildTileWithBackgroundColor(
               Padding
                 (
                 padding: const EdgeInsets.all(24.0),
@@ -71,30 +78,35 @@ class _PlanPageState extends State<PlanPage>
                     [
                       Column
                         (
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>
                         [
-                          Text('Total Views', style: TextStyle(color: Colors.blueAccent)),
-                          Text('265K', style: TextStyle(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 34.0))
+                          Text('Balanced', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 17.0)),
+                          Text('The classic healthy balanced diet', style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 13.0)),
+                          new RaisedButton(
+                              child: new Text("View plan"),
+                              color: Colors.white,
+                              onPressed: _onPressViewPlan,
+                              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0))
+                          )
                         ],
                       ),
-                      Material
-                        (
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(24.0),
-                          child: Center
-                            (
-                              child: Padding
-                                (
-                                padding: const EdgeInsets.all(16.0),
-                                child: Icon(Icons.timeline, color: Colors.white, size: 30.0),
-                              )
-                          )
-                      )
+                      Image.asset(
+                        'images/meat.png',
+                        fit: BoxFit.scaleDown,
+                      ),
                     ]
                 ),
               ),
+              Color.fromARGB(255, 247, 115, 171),
+            ),
+            Container
+              (
+              child: Text('High protein', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 17)),
+            ),
+            _buildPlansSection(
+               PlanMeals("High protein", "Plenty of protein-rich foods", "", "", "Meaty plans", null, "#eb4f5e", " ", "", ""),
             ),
             _buildTile(
               Padding(
@@ -246,7 +258,9 @@ class _PlanPageState extends State<PlanPage>
             )
           ],
           staggeredTiles: [
-            StaggeredTile.extent(2, 110.0),
+            StaggeredTile.extent(2, 20.0),
+            StaggeredTile.extent(2, 160.0),
+            StaggeredTile.extent(2, 20.0),
             StaggeredTile.extent(1, 180.0),
             StaggeredTile.extent(1, 180.0),
             StaggeredTile.extent(2, 220.0),
@@ -268,5 +282,59 @@ class _PlanPageState extends State<PlanPage>
             child: child
         )
     );
+  }
+
+  Widget _buildTileWithBackgroundColor(Widget child, Color backgroundColor, {Function() onTap}) {
+    return Material(
+        elevation: 14.0,
+        borderRadius: BorderRadius.circular(12.0),
+        shadowColor: Color(0x802196F3),
+        color: backgroundColor,
+        child: InkWell
+          (
+          // Do onTap() if it isn't null, otherwise do print()
+            onTap: onTap != null ? () => onTap() : () { print('Not set yet'); },
+            child: child
+        )
+    );
+  }
+
+  Widget _buildPlansSection(PlanMeals plan, {Function() onTap}) {
+    return Material (
+        elevation: 14.0,
+        borderRadius: BorderRadius.circular(12.0),
+        shadowColor: Color(0x802196F3),
+        color: HexColor(plan.backgroundColor),
+        child: InkWell
+          (
+          // Do onTap() if it isn't null, otherwise do print()
+            onTap: onTap != null ? () => onTap() : () { print('Not set yet'); },
+            child:
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column
+                (
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>
+                  [
+                    Text(plan.name, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 17.0), textAlign: TextAlign.center,),
+                    Text(plan.description, style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal, fontSize: 13.0), textAlign: TextAlign.center),
+                    Image(
+                      image: new AssetImage("images/meat.png"),
+                      width: 72,
+                      height: 72,
+                      color: null,
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.center,
+                    )
+                  ]
+              ),
+            ),
+        )
+    );
+  }
+  void _onPressViewPlan () {
+
   }
 }

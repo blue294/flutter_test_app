@@ -11,4 +11,15 @@ class PlanMeals {
   String about;
   String whatBeEat;
   String benefits;
+
+  PlanMeals(this.name,
+      this.description,
+      this.imageUrl,
+      this.key,
+      this.categoryName,
+      this.recipes,
+      this.backgroundColor,
+      this.about,
+      this.whatBeEat,
+      this.benefits);
 }
