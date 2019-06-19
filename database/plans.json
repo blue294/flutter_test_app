@@ -1,0 +1,24 @@
+{
+  "dash": {
+    "name": "Chế độ ăn uống hạ huyết áp (Dash)",
+    "description": "Chế độ ăn uống phù hợp với người huyết áp cao",
+    "imageUrl": "http://images.media-allrecipes.com/userphotos/960x960/4526601.jpg",
+    "key": "",
+    "categoryName": "",
+    "backgroundColor": "",
+    "about": "Tại các quốc gia khác thì chế độ ăn uống hạ huyết áp còn được gọi với tên gọi là dash.",
+    "whatBeEat": "Khi sử dụng chế độ ăn uống hạ huyết áp, chúng ta nên sử dụng nhiều nguyên liệu từ các loại ngũ cốc và rau xanh. Sở dĩ như vậy vì trong ngũ cốc và các loại rau xanh chứa nhiều chất xơ, canxi, protein, kali. Khi tiến hành thực hiện chế độ dash này, cần hạn chế sử dụng các loại thực phẩm chứa nhiều calo, chất béo, đường, đạm từ thịt đỏ, muối mới có thể mang lại hiệu quả tốt nhất.",
+    "benefits": "Đây đều là những thành phần có vai trò rất tốt trong việc kiểm soát lượng đường trong máu và góp phần hạ huyết rất tốt. Ngoài ra chế độ ăn uống này còn giúp phòng ngừa các chứng bệnh về tim mạch và tiểu đường rất hiệu quả."
+  },
+    "tlc": {
+    "name": "Chế độ ăn uống ít chất béo (TLC)",
+    "description": "Đây là một phương pháp được đánh giá cao về sức khỏe tim mạch cũng như giảm cân.",
+    "imageUrl": "http://images.media-allrecipes.com/userphotos/960x960/4526601.jpg",
+    "key": "",
+    "categoryName": "",
+    "backgroundColor": "",
+    "about": "Chế độ ăn uống ít chất béo còn được gọi với tên là TLC, từ tên gọi có thể đủ thể hiện được rằng trong việc thực hiện chế độ ăn uống này thì việc sử dụng nguồn nguyên liệu ít chất béo.",
+    "whatBeEat": "các loại thịt như thịt gà, cá là lựa chọn ưu tiên hàng đầu. Hạn chế sử dụng hình thức dung nạp chất béo vào cơ thể thông qua các món ăn được chế biến từ dầu mỡ, giảm việc sử dụng các nguyên liệu có nguồn gốc từ động vật giàu cholesterol.",
+    "benefits": "Tạo hiệu ứng tốt cho sức khỏe hệ tim mạch"
+  }
+}

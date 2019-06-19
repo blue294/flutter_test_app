@@ -1,0 +1,20 @@
+{
+  "recipeMeals": {
+    "name": "",
+    "imageUrl": "",
+    "nutritions": {
+      "kcal": "",
+      "cards": "",
+      "protein": "",
+      "fat": "",
+      "fiber": "",
+      "sugar": ""
+    },
+    "ingredients": "",
+    "instructions": "",
+    "mealsName": "",
+    "durations": "",
+    "healthScore": "",
+    "isFavorite": false
+  }
+}
